@@ -64,12 +64,12 @@ func isBalanced(root *TreeNode) bool {
 	return ok
 }
 
-func getDepth(root *TreeNode) (int, bool) {
-	if root == nil {
+func getDepth(node *TreeNode) (int, bool) {
+	if node == nil {
 		return 0, true
 	}
-	leftDepth, ok1 := getDepth(root.Left)
-	rightDepth, ok2 := getDepth(root.Right)
+	leftDepth, ok1 := getDepth(node.Left)
+	rightDepth, ok2 := getDepth(node.Right)
 	if !ok1 || !ok2 {
 		return 0, false
 	}
